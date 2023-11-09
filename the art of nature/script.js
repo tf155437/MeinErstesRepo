@@ -67,23 +67,24 @@ const Picture8 =  {
     productname: 'Picture 8',
     description: "Felder Sonnenuntergang Wolken ", 
     price: '48€',
-bildurl:'https://images.unsplash.com/photo-1486912500284-6f2462ba07ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI5fHxuYXR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
+    bildurl:'https://images.unsplash.com/photo-1486912500284-6f2462ba07ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI5fHxuYXR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60'
 }
 const produkte = [Picture1, Picture2, Picture3, Picture4, Picture5, Picture6, Picture7, Picture8];
 
 const productContainer = document.getElementById('product-container');
  
 // Produkte auf der Webseite anzeigen
-produkteAusLocalStorage.forEach(produkt => {
+const produktContainer = document.getElementById('products');
+produkte.forEach(produkt => {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
     productCard.innerHTML = `
-        <h2>${productname}</h2>
-        <p>${description}</p>
-        <p>Preis: $${price.toFixed(2)}</p>
-        <p><button class="add-to-cart-button" id=btn${articleID}>In den Warenkorb</button></p>
-        <p>${"https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjE3fHxuYXR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60, https://images.unsplash.com/photo-1461696114087-397271a7aedc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80, https://images.unsplash.com/photo-1481660471672-28a88967efdc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80, https://images.unsplash.com/photo-1461301214746-1e109215d6d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80, https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bmF0dXJlfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60, https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTkyfHxuYXR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60, https://images.unsplash.com/photo-1470770903676-69b98201ea1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80, https://images.unsplash.com/photo-1486912500284-6f2462ba07ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjI5fHxuYXR1cmV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60}
+        <h2>${produkt.productname}</h2>
+        <p>${produkt.description}</p>
+        <p>Preis: $${produkt.price}</p>
+        <p><button class="add-to-cart-button" id=btn${produkt.articleID}>In den Warenkorb</button></p>
+        <p>${produkt.bildurl}
     `;
-    productContainer.appendChild(productCard);
+    produktContainer.appendChild(productCard);
 });
 
