@@ -1,3 +1,4 @@
+// Produkte anzeigen
 //Product 1
 const Picture1 =  {
     articleID: 10001,
@@ -88,3 +89,11 @@ produkte.forEach(produkt => {
     produktContainer.appendChild(productCard);
 });
 
+// Ab hier kümmern wir uns um den Einkaufswagen 
+let arrBuyings = [];
+// 1. Unsere Buttons brauchen alle einen Eventhandler, beim klicken eines Buttons soll die Funktion buyProduct() 
+// aufgerufen werden
+// Funktion schreiben
+// - Zugehörige ProduktId finden und in den Warenkorb übernehmen (Fallunterscheidung (neu oder update))
+// dabei immer aktuelle Werte aus LocalStorage holen und am Ende zurückschreiben
+// Anzeige: Tabelle oder Liste, ... 

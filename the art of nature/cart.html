@@ -7,7 +7,7 @@
     <title>Cart</title>
 </head>
 <body>
-    <script src="script.js"></script>
+  
     <div id="balken">
         <h1>The art of nature<h1>
         </div>
@@ -31,8 +31,42 @@
             <th>Preis</th>
             <th>Anzahl</th>
             <th>Gesamtpreis</th>
+            <th>Löschen</th>
           </tr>
         </table>
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Warenkorb</title>
+        </head>
+        <body>
+            <h1>Warenkorb</h1>
+            <p>Deine ausgewählten Produkte:</p>
+            <ul id="cartList">
+                <!-- Hier werden die Produkte dynamisch hinzugefügt -->
+            </ul>
+        
+            <a href="index.html">Zurück zur Home-Seite</a>
+        
+            <script>
+                // Lese den Warenkorb aus dem Local Storage und zeige die Produkte an
+                var cartList = localStorage.getItem('cartList');
+                cartList = cartList ? JSON.parse(cartList) : [];
+        
+                var cartListElement = document.getElementById('cartList');
+                cartList.forEach(function(productId) {
+                    var li = document.createElement('li');
+                    li.textContent = productId;
+                    cartListElement.appendChild(li);
+                });
+            </script>
+        </body>
+        </html>
+        
+        <script src="script.js"></script>
     </body>    
     </html>
    

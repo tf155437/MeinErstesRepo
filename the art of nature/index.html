@@ -25,6 +25,50 @@
     <li><a href="cart.html">Cart</a></li>
     </ul>
 </nav>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Home-Seite</h1>
+    <p>Produkte:</p>
+    <ul>
+        <li id="product1">Produkt 1 <button onclick="addToCart('product1')">In den Warenkorb</button></li>
+        <li id="product2">Produkt 2 <button onclick="addToCart('product2')">In den Warenkorb</button></li>
+        <!-- Weitere Produkte hier -->
+    </ul>
+
+    <a href="cart.html">Zum Warenkorb</a>
+
+    <script>
+        function addToCart(productId) {
+            // Hier rufen wir die Funktion auf, um das Produkt zum Warenkorb hinzuzufügen
+            addProductToCart(productId);
+            console.log(productId + ' wurde zum Warenkorb hinzugefügt');
+        }
+        
+        function addProductToCart(productId) {
+            // Hier wird die Artikel-ID zum Warenkorb auf der Cart-Seite hinzugefügt
+            var cartList = localStorage.getItem('cartList');
+            cartList = cartList ? JSON.parse(cartList) : [];
+
+            // Füge die Artikel-ID zum Warenkorb hinzu
+            cartList.push(productId);
+
+            // Speichere den aktualisierten Warenkorb in den Local Storage
+            localStorage.setItem('cartList', JSON.stringify(cartList));
+        }
+    </script>
+</body>
+</html>
+
+
+
 <script src="script.js"></script>
 </body>
 </html>
