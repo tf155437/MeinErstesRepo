@@ -86,13 +86,18 @@ produkte.forEach(produkt => {
         <p>
         <img src="${produkt.bildurl}"  alt="" width="600px" height="350px" style="margin:15px"></img>
     `;
+   
     produktContainer.appendChild(productCard);
+    // arrBuyings.push({produkt.productname, produkt.price})
 });
+
+
 
 // Ab hier kümmern wir uns um den Einkaufswagen 
 let arrBuyings = [];
 // 1. Unsere Buttons brauchen alle einen Eventhandler, beim klicken eines Buttons soll die Funktion buyProduct() 
 // aufgerufen werden
+
 // Funktion schreiben
 // - Zugehörige ProduktId finden und in den Warenkorb übernehmen (Fallunterscheidung (neu oder update))
 // dabei immer aktuelle Werte aus LocalStorage holen und am Ende zurückschreiben
